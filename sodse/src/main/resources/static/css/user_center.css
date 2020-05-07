@@ -1,0 +1,127 @@
+#user_center {
+    width: 100%;
+}
+
+#user_center .type {
+    width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    border-bottom: 3px solid rgb(232, 232, 232);
+}
+
+#user_center .type .tab {
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 3px solid rgb(232, 232, 232);
+    cursor: pointer;
+    float: left;
+}
+
+#user_center .type .selected {
+    color: rgb(105, 90, 199);
+    border-bottom: 3px solid rgb(105, 90, 199);
+}
+
+#user_center .type .tab div {
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+    padding: 0 25px;
+    vertical-align: middle;
+    border-right: 1px solid rgb(232, 232, 232);
+    font-size: 25px;
+    display: inline-block;
+}
+
+#user_center .type .tab .last {
+    border-right: none;
+}
+
+#user_center .title {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    border: 1px solid rgb(232, 232, 232);
+    background-color: rgb(245, 245, 245);
+}
+
+#user_center .title td {
+    line-height: 50px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#user_center .tables {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#user_center .tables .table {
+    margin-top: 20px;
+    border: 2px solid rgb(236, 236, 236);
+}
+
+#user_center .table .head .time {
+    margin-left: 15px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#user_center .tables .table .head {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background-color: rgb(241, 241, 241);
+}
+#user_center .tables .table .head .status{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 35px;
+    color: red;
+    float: right;
+}
+#user_center .tables table tr {
+    width: 100%;
+    height: 130px;
+    border-bottom: 2px solid rgb(241, 241, 241);
+}
+
+#user_center .tables table .image img {
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+#user_center .tables table .price {
+    text-align: center;
+}
+
+#user_center .tables table .amount {
+    text-align: center;
+}
+
+#user_center .tables table .pay {
+    text-align: center;
+    border-left: 2px solid rgb(241, 241, 241);
+}
+#user_center .tables .pay .money{
+    font-weight: bold;
+    font-size: 18px;
+}
+#user_center .tables table .operate {
+    text-align: center;
+    border-left: 2px solid rgb(241, 241, 241);
+}
+#user_center .tables table .operate button{
+    padding: 8px 15px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: rgb(102, 182, 255);
+    border: 1px solid rgb(155, 193, 254);
+    border-radius: 3px;
+}
+#user_center .tables table .operate button:hover{
+    background-color: rgb(17, 138, 219);
+}

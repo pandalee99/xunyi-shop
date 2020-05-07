@@ -1,0 +1,165 @@
+#items {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+#items .head {
+    width: 1300px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+#items .head p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 90px;
+}
+
+#items .head .line {
+    width: 1200px;
+    height: 5px;
+    margin: 10px auto;
+    background-color: rgb(230, 230, 230);
+
+}
+
+#items .shoppingcar {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#items table thead th {
+    height: 70px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+}
+
+#items table thead .checkbox {
+    line-height: 40px;
+}
+
+#items table thead img {
+    width: 23px;
+    height: 20px;
+}
+
+#items table tbody tr {
+    width: 100%;
+    height: 150px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+#items table .checkbox {
+    width: 120px;
+}
+
+#items table .checkbox img {
+    width: 23px;
+    height: 20px;
+}
+
+#items table .goods {
+    width: 150px;
+}
+
+#items table .goods .box {
+    width: 130px;
+    height: 130px;
+    padding-top: 3px;
+    padding-left: 3px;
+    border: 1px solid rgb(238, 238, 238);
+
+}
+
+#items table .goods img {
+    width: 120px;
+    height: 120px;
+}
+
+#items table .info {
+    width: 700px;
+}
+
+#items table .price {
+    width: 150px;
+    font-size: 23px;
+    color: red;
+}
+
+#items table .amount {
+    width: 130px;
+}
+
+#items table .amount button {
+    width: 20px;
+    height: 30px;
+    font-weight: bold;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(224, 224, 224);
+}
+
+#items table .amount button:hover {
+    border: 1px solid rgb(139, 126, 226);
+    color: rgb(139, 126, 226);
+}
+
+#items table .amount input {
+    width: 50px;
+    height: 30px;
+    border: 1px solid rgb(170, 170, 170);
+    text-align: center;
+}
+
+#items table .total,.totalprice {
+    width: 100px;
+    font-size: 23px;
+    color: red;
+}
+
+#items table .operate {
+    width: 100px;
+}
+#items table .operate a:hover {
+    color: red;
+}
+
+#items .carfoot {
+    width: 1200px;
+    height: 60px;
+    margin: 30px auto 0px;
+    font-size: 18px;
+    line-height: 60px;
+    background-color: rgb(229, 229, 229);
+}
+#items .carfoot .left{
+    height: 100%;
+    margin-left: 20px;
+    
+    float: left;
+}
+#items .carfoot .left img{
+    width: 23px;
+    height: 20px;
+}
+#items .carfoot .right {
+    height: 100%;   
+    float: right;
+}
+#items .carfoot .right .itemsNum{
+    font-size: 25px;
+    color: red;
+}
+#items .carfoot .right .price{
+    font-size: 25px;
+    color: red;
+}
+#items .carfoot .right .submit{
+    width: 150px;
+    height: 100%;
+    background-color: rgb(139, 126, 226);
+    border-top: 2px solid rgb(139, 126, 226);
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+}

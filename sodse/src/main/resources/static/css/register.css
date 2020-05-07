@@ -1,0 +1,134 @@
+#main{
+    width: 100%;
+}
+#banner{
+    width: 100%;
+    height: 100px;
+}
+#banner .logo{
+    margin-left: 350px;
+    height: 80px;
+    line-height: 95px;
+}
+#banner .logo img{
+    height: 80px;
+}
+#middle{
+    width: 100%;
+    height: 700px;
+    padding-top: 50px;
+    background: url("../img/bac.jpg") no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+#register{
+    top: 50px;
+    right: 60px;
+    width: 520px;
+    height: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgb(204,204,204);
+    position: absolute;
+}
+#register .banner{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(204, 204, 204);
+}
+#register .banner p{
+    margin-left: 35px;
+}
+#register .info{
+    width: 490px;
+    height: 300px;
+    margin-top: 33px;
+    font-size: 20px;
+}
+#register .info .line{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    color: rgb(104, 104, 104);
+}
+#register .line .text{
+    width: 170px;
+    line-height: 40px;
+    padding-right: 40px;
+    text-align: right;
+    float: left;
+}
+#register .line .inputbox{
+    float: left;
+}
+#register .line .inputbox input{
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid rgb(204, 204, 204);
+    color: #000000;
+    font-size: 20px;
+}
+#register .line .inputbox input:focus{
+    border: 1px solid rgb(109, 153, 247);   
+}
+#register .info .agreement {
+    height: 45px;
+    margin-top: 5px;
+    padding-left: 100px;
+}
+#register .info .agreement input{
+    margin-left: 10px;
+    font-size: 15px;
+}
+#register .info .line span{
+    margin-left: 10px;
+    font-size: 15px;
+}
+#register .info .line a{
+    font-size: 15px;
+    color: rgb(0, 104, 208);
+}
+#register .info .line a:hover{
+    font-size: 15px;
+    text-decoration: underline;
+    color: rgb(0, 104, 208);
+}
+#register button{
+    width: 330px;
+    height: 40px;
+    margin-left: 95px;
+    background-color: rgb(139, 126, 226);
+    font-size: 25px;
+    color: #ffffff;
+    border: 1px solid rgb(204, 204, 204);
+}
+#register button:hover{
+    background-color: rgb(190, 154, 226);
+}
+#bottom{
+    margin-top: 30px;
+    width: 100%;
+}
+#bottom .links{
+    width: 1070px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: rgb(108, 108, 108);
+}
+#bottom .links span{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+#bottom .links a{
+    color: rgb(108, 108, 108);  
+}
+#bottom .links a:hover{
+    color: red;  
+}
+#bottom .copyright{
+    width: 300px;
+    margin: 25px auto;
+    font-size: 13px;
+}

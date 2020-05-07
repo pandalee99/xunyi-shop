@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>商品展示</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/top.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/selectbar.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/foot.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/item.css" />
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/item.js"></script>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript">
+
+        function sss() {
+            var size = amount.value
+            var id = [[${product.getId()}]];
+            location.href = 'check/' + id+"/"+size;
+
+        }
+
+    </script>
+    <script type="text/javascript">
+
+        function ddd() {
+            var amount = document.getElementById("amount").value
+            var id = [[${product.getId()}]];
+
+            $.ajax({
+                url:"/shop/addcar/"+amount+"/"+id,
+                data:id,
+                dataType:"text",
+                type:"GET",
+                success:function(data){
+                    if (data=="no"){
+                        alert("尚未登录，请登录")
+                        location.href='/login'
+                    }
+                    else if(data=="success"){
+                        alert("加入购物车成功");
+                    }else{
+                        alert("加入购物车失败，库存不足");
+                    }
+                }
+            });
+
+        }
+
+    </script>
+
+    <script type="text/javascript">
+
+        function fff() {
+
+            location.href = '/user/design/'+[[${product.getId()}]];
+
+        }
+
+    </script>
+
+</head>
+<body>
+<div id="main">
+
+    <div id="top">
+        <div class="middle">
+            <div class="left"  sec:authorize="!isAuthenticated()">
+                <img src="/static/img/home.png">
+                <span>欢迎来到XXXX</span>
+                <a th:href="@{/}">首页</a>
+                <a th:href="@{/login}">请登录</a>
+                <a th:href="@{/register}">免费注册</a>
+            </div>
+            <div class="right" sec:authorize="isAuthenticated()">
+                <a th:href="@{/}">首页</a>
+                <a th:href="@{/shop/my}">我的订单</a>
+                <img src="/static/img/shopcar.png">
+                <a th:href="@{/shop/my_shopping_cart}">我的购物车</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="selectbar">
+        <!--        <a class="logo" href="#"><img src="/static/img/logo.png" alt=""></a>-->
+        <form id="inf" name="inf" action="#" th:action="@{/search}" method="POST">
+            <div class="search">
+                <input type="text" id="obj" name="obj" value="西服"  placeholder="男装 女装">
+                <button type="button" onclick="search()">搜索</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="item">
+
+        <div class="up">
+            <div class="left">
+                <div class="bigImg">
+                    <img id="bigImg"  th:src="${product.getImg()}"
+                          src="/static/img/8345.jpg" alt="">
+                </div>
+<!--                <div class="smallImgDiv">-->
+<!--                    <img class="imgs" src="./img/8345.jpg" alt="">-->
+<!--                    <img class="imgs" src="./img/8344.jpg" alt="">-->
+<!--                    <img class="imgs" src="./img/8343.jpg" alt="">-->
+<!--                    <img class="imgs" src="./img/8342.jpg" alt="">-->
+<!--                    <img class="imgs" src="./img/8341.jpg" alt="">-->
+<!--                </div>-->
+            </div>
+            <div class="right">
+                <form action="">
+                    <div class="name" th:text="${product.getNote()}">xxxxxx</div>
+<!--                    <div class="title">前4000名 送时尚棉麻套装 清凉季</div>-->
+                    <div class="price">
+<!--                        <div class="line1">-->
+<!--                            <div class="text">价格</div>-->
+<!--                            <div class="del">1999</div>-->
+<!--                        </div>-->
+                        <div class="line2">
+                            <div class="text">价格</div>
+                            <div class="money" th:text="${product.price}">xxxx</div>
+                        </div>
+                    </div>
+                    <div class="post_fee">
+                        <span>运费</span>
+                        <input type="radio" value="" checked="checked">
+                        <label>普通配送</label>
+                        <select name="" id="">
+                            <option value="">快递 免邮费</option>
+                        </select>
+                    </div>
+                    <div class="numbers">
+                        <div class="border">月销量&nbsp;<span class="black">380</span></div>
+                        <div class="border">库存&nbsp;<span class="black" th:text="${product.getStock()}">380</span></div>
+<!--                        <div>送积分&nbsp;<span class="red">380</span></div>-->
+                    </div>
+<!--                    <div class="size">-->
+<!--                        <div class="text">尺码</div>-->
+<!--                        <div class="type" >-->
+<!--                            <span class="sp">s</span>-->
+<!--                            <span class="sp">L</span>-->
+<!--                            <span class="sp">XL</span>-->
+<!--                            <span class="sp">2XL</span>-->
+<!--                            <span class="sp">3XL</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="category">-->
+<!--                        <div class="text">颜色</div>-->
+<!--                        <div class="type">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                            <img class="image" src="/static/img/timg.jpg" alt="">-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="amount">
+                        <div class="text">数量</div>
+                        <div class="number">
+                            <input id="amount" type="text" value="1">
+                            <div class="arrow">
+                                <div id="arrowup" class="arrowup"></div>
+                                <div id="arrowdown" class="arrowdown"></div>
+                            </div>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;件</span>
+                            <span th:text="${product.getStock()}">&nbsp;&nbsp;库存56件</span>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <pre>服务承诺        正品保证、极速退款</pre>
+                    </div>
+                    <div class="btn">
+<!--                        <button ><a href=""-->
+<!--                                    th:href="@{check/{p}(p=${product.getId()})}"-->
+<!--                                    th:value="${product.getId()}"-->
+<!--                                    type="submit">立 即 购 买</a></button>-->
+                        <button  class="submit" type="button" onclick="sss()"> 立&nbsp;即&nbsp;购&nbsp;买</button>
+
+                        <button class="submit" type="button" onclick="ddd()" >加 入 购 物 车</button>
+
+                        <br/>
+                        <br/>
+
+
+                        <button class="submit" type="button" onclick="fff()" >我 要 定 制</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="down">
+            <div class="head">
+                <div class="st">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div id="detail" class="text selected">商品详情</div>
+                <div id="evaluate" class="text">累计评价</div>
+            </div>
+            <div id="details" class="details" >
+                <div th:each="item:${images}">
+                <img  th:src="${item.getImg()}" src="/static/img/8346.jpg" alt="">
+                </div>
+            </div>
+
+
+            <div id="evaluates" class="evaluates">
+                <div class="eva">
+                    <div class="info">mmm</div>
+                    <div class="name">h************l（匿名）</div>
+                    <div class="time">2019-02-17</div>
+                </div>
+                <div class="eva">
+                    <div class="info">mmm</div>
+                    <div class="name">h************l（匿名）</div>
+                    <div class="time">2019-02-17</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="foot">
+        <div class="middle">
+            <img src="/static/img/foot.jpg" alt="">
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="links">
+            <span><a href="#">关于我们</a></span>|
+            <span><a href="#">联系我们</a></span>|
+            <span><a href="#">人才招聘</a></span>|
+            <span><a href="#">商家入驻</a></span>|
+            <span><a href="#">广告服务</a></span>|
+            <span><a href="#">手机应用</a></span>|
+            <span><a href="#">友情链接</a></span>|
+            <span><a href="#">销售联盟</a></span>|
+            <span><a href="#">xx社区</a></span>|
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2019-2021 www.sodse.com 版权所有</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

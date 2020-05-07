@@ -1,0 +1,240 @@
+#columnbar {
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid rgb(139, 126, 226);
+}
+
+#columnbar .middle {
+    width: 1200px;
+    line-height: 30px;
+    font-size: 17px;
+    margin: 0 auto;
+}
+
+#columnbar .middle #menu {
+    width: 200px;
+    height: 34px;
+    background-color: rgb(139, 126, 226);
+    color: #ffffff;
+    float: left;
+}
+
+#menu .down {
+    width: 200px;
+    height: 500px;
+    top: 200px;
+    background-color: rgb(108, 108, 108);
+    position: absolute;
+    display: none;
+}
+
+#columnbar .middle #menu:hover .down {
+    z-index: 1;
+    display: block;
+}
+
+#menu .down .tag {
+    width: 100%;
+    height: 40px;
+
+}
+
+#menu .down .tag:hover {
+    font-weight: bold;
+    color: rgb(66, 152, 239);
+    background-color: #ffffff;
+}
+
+#menu .down .tag:hover a{
+    color: black;
+}
+
+#menu .down .cate-tag {
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+
+#menu .down .cate-tag a {
+    color: #ffffff;
+    font: bold;
+}
+
+#menu .down .cate-tag a:hover {
+    color: red;
+}
+
+#menu .down .list-item {
+    width: 850px;
+    height: 500px;
+    top: 0px;
+    left: 200px;
+    background-color: #ffffff;
+    font-weight: 500;
+    position: absolute;
+    display: none;
+}
+
+#menu .down .tag:hover .list-item {
+    color: #000000;
+    display: block;
+}
+
+#menu .down .list-item ul {
+    width: 850px;
+    height: 30px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+#menu .down .list-item li {
+    margin-left: 40px;
+    float: left;
+}
+
+#menu .down .list-item a:hover {
+    color: red;
+}
+
+#columnbar .middle .column {
+    float: left;
+}
+
+#columnbar .middle .column a {
+    margin-left: 55px;
+    color: #000000;
+}
+
+#columnbar .middle .column a:hover {
+    color: red;
+}
+
+#scollimg {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#scollimg .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#scollimg .container img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#scollimg .item {
+    width: 400px;
+    height: 5px;
+    left: 760px;
+    bottom: 30px;
+    position: absolute;
+}
+
+#scollimg .item span {
+    width: 40px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 30px;
+    opacity: 0.7;
+    background-color: rgb(163, 163, 163);
+}
+
+#scollimg .item span:hover {
+    cursor: pointer;
+}
+
+#columns {
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#columns .column {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 45px;
+}
+
+#columns .column .container {
+    width: 1200px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+#columns .container .title {
+    width: 100%;
+    height: 40px;
+}
+
+#columns .container .title .tag {
+    width: 10px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 9px;
+    background-color: rgb(51, 51, 51);
+    float: left;
+
+}
+
+#columns .container .title .name {
+    width: 400px;
+    height: 40px;
+    margin-left: 30px;
+    line-height: 38px;
+    font-size: 20px;
+    float: left;
+}
+
+#columns .container .items a {
+    width: 225px;
+    height: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 3px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    float: left;
+}
+
+#columns .container .items a:hover {
+    border: 1px solid red;
+}
+
+#columns .container .items .item {
+    width: 100%;
+    height: 100%;
+}
+
+#columns .item .item-image {
+    width: 210px;
+    margin: 5px auto;
+}
+
+#columns .item .item-image img {
+    width: 210px;
+    height: 210px;
+}
+
+#columns .item .item-name {
+    width: 180px;
+    height: 40px;
+    margin: 8px auto 0;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+#columns .item .item-price {
+    width: 100%;
+    margin: 3px auto;
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}

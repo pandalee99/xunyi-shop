@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/top.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/selectbar.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/foot.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css" />
+    <script src="/static/js/main.js"></script>
+</head>
+<body>
+<div id="main">
+    <div id="top">
+        <div class="middle">
+            <div class="left"  sec:authorize="!isAuthenticated()">
+                <img src="/static/img/home.png">
+                <span>欢迎来到XXXX</span>
+                <a th:href="@{/}">首页</a>
+                <a th:href="@{/login}">请登录</a>
+                <a th:href="@{/register}">免费注册</a>
+            </div>
+            <div class="right" sec:authorize="isAuthenticated()">
+                <a th:href="@{/}">首页</a>
+                <a th:href="@{/shop/my}">我的订单</a>
+                <img src="/static/img/shopcar.png">
+                <a th:href="@{/shop/my_shopping_cart}">我的购物车</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="selectbar">
+        <!--        <a class="logo" href="#"><img src="/static/img/logo.png" alt=""></a>-->
+        <form id="inf" name="inf" action="#" th:action="@{/search}" method="POST">
+            <div class="search">
+                <input type="text" id="obj" name="obj" value="西服"  placeholder="男装 女装">
+                <button type="button" onclick="search()">搜索</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="search">
+        <div class="products">
+            <div class="item" th:each="product :${products}">
+                <a href=""
+                   th:href="@{/shop/single_product/{p}(p=${product.getId()})}"
+                   th:value="${product.getId()}"
+                   type="submit"
+                >
+                    <div class="item-image">
+                        <img src="/static/img/8341.jpg" th:src="${product.getImg()}" alt="">
+                    </div>
+                    <div class="item-name" th:text="${product.getProductName()}">针</div>
+                    <div class="item-price" th:text="${product.getPrice()}">￥650</div>
+                    <div class="item-bottom">
+<!--                        <div class="month">&nbsp;月成交&nbsp;&nbsp;<span>5377</span></div>-->
+<!--                        <div class="logo"><img src="./img/wangwang.png" alt=""></div>-->
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <div class="middle">
+            <img src="/static/img/foot.jpg" alt="">
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="links">
+            <span><a href="#">关于我们</a></span>|
+            <span><a href="#">联系我们</a></span>|
+            <span><a href="#">人才招聘</a></span>|
+            <span><a href="#">商家入驻</a></span>|
+            <span><a href="#">广告服务</a></span>|
+            <span><a href="#">手机美美</a></span>|
+            <span><a href="#">友情链接</a></span>|
+            <span><a href="#">销售联盟</a></span>|
+            <span><a href="#">xx社区</a></span>|
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2004-2019 www.sodse.com 版权所有</p>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

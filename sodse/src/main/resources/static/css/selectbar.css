@@ -1,0 +1,42 @@
+#selectbar {
+    width: 1200px;
+    height: 125px;
+    margin: 0 auto;
+}
+
+#selectbar a img {
+    margin-top: 30px;
+    margin-left: 12px;
+    width: 200px;
+    float: left;
+}
+
+#selectbar form {
+    margin-top: 40px;
+    margin-left: 135px;
+    float: left;
+}
+
+#selectbar .search {
+    width: 550px;
+    height: 50px;
+    border: 2px solid rgb(139, 126, 226);
+}
+
+#selectbar .search input {
+    width: 450px;
+    height: 100%;
+    padding-left: 10px;
+    font-size: 22px;
+    float: left;
+}
+
+#selectbar .search button {
+    width: 96px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgb(139, 126, 226);
+    float: left;
+}

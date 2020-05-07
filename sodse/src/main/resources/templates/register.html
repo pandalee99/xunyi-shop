@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css" />
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script src="/static/js/register.js"></script>
+    <script type="text/javascript">
+
+        function check(){
+                var user =  info.userName.value;
+                var password = info.password.value;
+                var password2=info.password2.value;
+                if((user.length==0)){
+                    alert("请填写用户名！");
+                    info.username.focus();
+                    return false;
+                }else if(password.length == 0){
+                    alert("请填写密码！");
+                    info.password.focus();
+                    return false;
+                } else if(password.toString() != password2.toString()){
+                        alert("两次密码不一致");
+                        info.password.focus();
+                        return false;
+                }
+            $.ajax({
+                url:"checkname"+"/"+user,
+                data:user,
+                dataType:"text",
+                type:"GET",
+                success:function(data){
+                    if(data=="success"){
+                        alert("注册成功！");
+                    }else{
+                        alert("该用户名已存在！");
+                        info.username.focus();
+                        return false;
+                    }
+                }
+            });
+
+                info.submit();
+            }
+
+    </script>
+</head>
+<body>
+<div id="main">
+    <div id="banner">
+<!--        <a class="logo" href="#"><img src="./img/logo.png"></a>-->
+    </div>
+    <div id="middle">
+        <div id="register">
+            <div class="banner">
+                <p>用户注册</p>
+            </div>
+<!--            onSubmit="return check(this);"-->
+<!--            <div th:if="${param.error}">-->
+<!--                密码错误-->
+<!--            </div>-->
+<!--            <div th:if="${param.logout}">-->
+<!--                您已注销-->
+<!--            </div>-->
+            <div>
+                <form  id="in" name="info" class="info" th:action="@{/addUser}" method="post" action="#"
+                       th:object="${user}">
+                    <div class="line">
+                        <div class="text">用户名</div>
+                        <div class="inputbox">
+                            <input type="text"  th:field="*{username}" id="userName" name="userName" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="text">设置密码</div>
+                        <div class="inputbox">
+                            <input  type="password" th:field="*{password}" id="password" name="password"  placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="text">确认密码</div>
+                        <div class="inputbox">
+                            <input  type="password" id="password2" name="password2" placeholder="请再次输入密码">
+                        </div>
+                    </div>
+<!--                    <div class="line">-->
+<!--                        <div class="text">手机号</div>-->
+<!--                        <div class="inputbox">-->
+<!--                            <input type="text" th:field="*{phone}" placeholder="请输入手机号">-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="line agreement">
+                        <div>
+                            <input type="checkbox">
+                            <span>"我已阅读并同意"</span>
+                            <a href="#">《用户注册协议》</a>
+                        </div>
+                    </div>
+                    <button  class="submit" type="button" onclick="check()"> 立&nbsp;即&nbsp;注&nbsp;册</button>
+<!--                    <input type="submit" value="注册" style="margin-top:8px"  onclick="check()">-->
+
+<!--                    <div class="line">-->
+<!--                        <input id="registerBtn" type="button" value="注册"/>-->
+<!--                    </div>-->
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="links">
+            <span><a href="#">关于我们</a></span>|
+            <span><a href="#">联系我们</a></span>|
+            <span><a href="#">人才招聘</a></span>|
+            <span><a href="#">商家入驻</a></span>|
+            <span><a href="#">广告服务</a></span>|
+            <span><a href="#">手机美美</a></span>|
+            <span><a href="#">友情链接</a></span>|
+            <span><a href="#">销售联盟</a></span>|
+            <span><a href="#">xx社区</a></span>|
+
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2004-2019 www.sodse.com 版权所有</p>
+        </div>
+    </div>
+</div>
+<script src="/static/js/login.js"></script>
+</body>
+</html>

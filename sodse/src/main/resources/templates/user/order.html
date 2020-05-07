@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/top.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/selectbar.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/foot.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/check_bill.css" />
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/shoppingcar.js"></script>
+    <script type="text/javascript">
+    function subtopay() {
+    var money = document.getElementById('allmoney').innerText;
+        var l1=document.getElementById('i1').value;
+        var l2=document.getElementById('i2').value;
+        var l3=document.getElementById('i3').value;
+        location.href = '/user/pay/'+money+'/'+l1+'/'+l2+'/'+l3;
+
+    }
+    </script>
+</head>
+<body>
+<div id="main">
+
+    <div id="top">
+        <div class="middle">
+            <div class="left"  sec:authorize="!isAuthenticated()">
+                <img src="/static/img/home.png">
+                <span>欢迎来到XXXX</span>
+
+                <a th:href="@{/login}">请登录</a>
+                <a th:href="@{/register}">免费注册</a>
+                <a th:href="@{/}">首页</a>
+            </div>
+            <div class="right" sec:authorize="isAuthenticated()">
+                <a th:href="@{/}">首页</a>
+                <a th:href="@{/shop/my}">我的订单</a>
+                <img src="/static/img/shopcar.png">
+                <a th:href="@{/shop/my_shopping_cart}">我的购物车</a>
+                <a th:href="@{/logout}">注销</a>
+            </div>
+        </div>
+    </div>
+    <div id="selectbar">
+        <!--        <a class="logo" href="#"><img src="/static/img/logo.png" alt=""></a>-->
+        <form id="inf" name="inf" action="#" th:action="@{/search}" method="POST">
+            <div class="search">
+                <input type="text" id="obj" name="obj" value="西服"  placeholder="男装 女装">
+                <button type="button" onclick="search()">搜索</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="checkbill" >
+        <form action="" id="info" name="info"  th:action="@{/submit_order}" method="post">
+            <div class="addr">
+                <div class="pos">
+                    <p>输入收货地址</p>
+                    <span>详细地址</span><input id="i1" name="address" th:value="${user.getAddress()}" placeholder="建议您如实填写详细收货地址，例如接到名称，门牌好吗，楼层和房间号等信息"></input><span
+                        class="star">*</span><br>
+
+                    <span>收货人姓名</span><input id="i2" name="receiver" th:value="${user.getName()}" placeholder="长度不超过25个字符" type="text"><span class="star">*</span><br>
+                    <span>手机号码</span><input id="i3" name="mobile" th:value="${user.getPhone()}" placeholder="请输入11位手机号码" type="text"><span class="star">*</span>
+                </div>
+            </div>
+            <div class="orderinfo">
+                <p>确认订单信息</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>商品图片</th>
+                        <th>商品信息</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>小计</th>
+                        <th>配送方式</th>
+                    </tr>
+                    <tr class="line">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="blank">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody >
+                    <tr>
+                        <td class="picture">
+                            <div class="box">
+                                <img   th:src="${session.check_product.getImg()}" src="/static/img/1.jpg" alt="">
+                            </div>
+                        </td>
+                        <td class="info">
+                            <div th:text="${session.check_product.getProductName()}">[ZY158728VG]</div>
+                            <br>
+                            <span>种类：</span><div th:text="${session.check_product.getCategory()}">种类：哈哈哈哈</div>
+                        </td>
+                        <td class="price" th:text="${session.check_product.getPrice()}">666</td>
+                        <td class="count" th:text="${session.amount}" >1</td>
+                        <td class="total" th:text=" ${session.check_product.getPrice()}*${session.amount}" >666</td>
+                        <td class="way" rowspan="3">
+                            <input type="radio" value="" checked="checked">
+                            <label>普通配送</label>
+                            <select name="" id="">
+                                <option value="">快递 免邮费</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="end">
+                <div class="line"></div>
+                <div class="msg">
+                    <div class="left">
+                        <span>给卖家留言：</span><input type="text" placeholder="选填：填写对本次交易的说明（建议填写和卖家商定好的内容）">
+                    </div>
+                    <div class="right">
+                        <div class="money" th:text=" ${session.check_product.getPrice()}*${session.amount}">13,830.00</div>
+                        <div class="text">店铺合计(含运费): </div>
+                    </div>
+                </div>
+                <div class="true_pay">
+                    <div class="money" id="allmoney" th:text=" ${session.check_product.getPrice()}*${session.amount}">13,830.00</div>
+                    <div class="text">实付款：</div>
+                </div>
+                <div class="subbtn">
+                    <button class="submit" type="button" onclick="subtopay()" >提交订单</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="foot">
+        <div class="middle">
+            <img src="/static/img/foot.jpg" alt="">
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="links">
+            <span><a href="#">关于我们</a></span>|
+            <span><a href="#">联系我们</a></span>|
+            <span><a href="#">人才招聘</a></span>|
+            <span><a href="#">商家入驻</a></span>|
+            <span><a href="#">广告服务</a></span>|
+            <span><a href="#">手机美美</a></span>|
+            <span><a href="#">友情链接</a></span>|
+            <span><a href="#">销售联盟</a></span>|
+            <span><a href="#">xx社区</a></span>|
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2004-2019 www.sodse.com 版权所有</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

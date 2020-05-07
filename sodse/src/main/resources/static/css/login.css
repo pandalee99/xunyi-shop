@@ -1,0 +1,107 @@
+#main{
+    width: 100%;
+}
+#banner{
+    width: 100%;
+    height: 100px;
+}
+#banner .logo{
+    margin-left: 350px;
+    height: 80px;
+    line-height: 95px;
+}
+#banner .logo img{
+    height: 80px;
+}
+#middle{
+    width: 100%;
+    height: 700px;
+    background-color: beige;
+    background: url("../img/bac.jpg") no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+#login{
+    top: 80px;
+    right: 100px;
+    width: 440px;
+    height: 500px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgb(204,204,204);
+    position: absolute;
+}
+#login .banner{
+    padding-top: 25px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(204, 204, 204);
+}
+#login .info{
+    width: 380px;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+#login .info input{
+    width: 380px;
+    height: 50px;
+    margin-top: 3px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+    border: 1px solid rgb(204, 204, 204);
+}
+#login .info button{
+    width: 380px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: rgb(139, 126, 226);
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px solid rgb(204, 204, 204);
+}
+#login .info button:hover{
+    background-color: rgb(190, 154, 226);
+}
+#login .foot{
+    margin-top: 15px;
+    margin-left: 250px;
+    color: rgb(108, 108, 108);
+}
+#login .foot a{
+    margin-left: 20px;
+    color: rgb(108, 108, 108);
+}
+#login .foot a:hover{
+    margin-left: 20px;
+    color: red;
+}
+#bottom{
+    margin-top: 30px;
+    width: 100%;
+}
+#bottom .links{
+    width: 1070px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: rgb(108, 108, 108);
+}
+#bottom .links span{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+#bottom .links a{
+    color: rgb(108, 108, 108);  
+}
+#bottom .links a:hover{
+    color: red;  
+}
+#bottom .copyright{
+    width: 300px;
+    margin: 25px auto;
+    font-size: 13px;
+}

@@ -1,0 +1,80 @@
+#search {
+    width: 100%;
+}
+
+#search .products {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#search .products .item {
+    width: 225px;
+    height: 325px;
+    margin-top: 30px;
+    margin-right: 15px;
+    background-color: #ffffff;
+    border: 1px solid rgb(238, 238, 238);
+    float: left;
+}
+
+#search .products .item:hover {
+    border: 1px solid red;
+}
+
+#search .products .item a {
+    width: 100%;
+    height: 100%;
+}
+
+#search .products .item .item-image {
+    width: 210px;
+    margin: 5px auto;
+}
+
+#search .products .item img {
+    width: 209px;
+    height: 209px;
+}
+
+#search .products .item .item-price {
+    font-size: 25px;
+    text-align: center;
+    color: red;
+}
+
+#search .products .item .item-name {
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center; 
+    text-overflow: clip;
+    
+}
+
+#search .products .item .item-bottom {
+    line-height: 30px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    color: rgb(153, 153, 153);
+}
+
+#search .item .item-bottom .month {
+    width: 85%;
+    border-right: 1px solid rgb(238, 238, 238);
+    float: left;
+}
+
+#search .item-bottom .month span {
+    color: rgb(181, 124, 91);
+}
+
+#search .item .item-bottom .logo {
+    margin-left: 5px;
+    float: left;
+}
+
+#search .item-bottom .logo img {
+    width: 20px;
+    height: 20px;
+}

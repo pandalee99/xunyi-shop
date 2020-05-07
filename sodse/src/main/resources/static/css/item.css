@@ -1,0 +1,387 @@
+#item {
+    width: 100%;
+}
+
+#item .up {
+    width: 1200px;
+    height: 630px;
+    margin: 0 auto;
+}
+
+#item .up .left {
+    width: 500px;
+    height: 100%;
+    float: left;
+}
+
+#item .up .left .bigImg {
+    width: 500px;
+    height: 500px;
+    padding: 25px;
+    border: 1px solid rgb(242, 242, 242);
+}
+
+#item .left .bigImg img {
+    width: 450px;
+    height: 450px;
+}
+
+#item .up .left .smallImgDiv {
+    width: 500px;
+    height: 130px;
+}
+
+#item .left .smallImgDiv img {
+    width: 80px;
+    height: 80px;
+    margin: 20px 10px;
+    border: 2px solid #ffffff;
+    float: left;
+}
+
+#item .left .smallImgDiv img:hover {
+    border: 2px solid black;
+}
+
+#item .up .right {
+    width: 700px;
+    height: 100%;
+    padding-left: 25px;
+    float: left;
+}
+
+#item .up .right .name {
+    width: 610px;
+    height: 30px;
+    margin-left: 15px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+#item .up .right .title {
+    width: 610px;
+    height: 20px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 15px;
+    color: rgb(228, 39, 39);
+    overflow: hidden;
+}
+
+#item .up .right .price {
+    width: 670px;
+    height: 80px;
+    background-image: url(../img/priceBackground.png);
+}
+
+#item .right .price .line1 {
+    width: 670px;
+    height: 35px;
+    padding-left: 30px;
+}
+
+#item .right .price .line2 {
+    width: 670px;
+    height: 45px;
+    padding-left: 30px;
+}
+
+#item .right .price .text {
+    width: 70px;
+    line-height: 35px;
+    color: rgb(153, 153, 153);
+    float: left;
+}
+
+#item .right .price .del {
+    width: 140px;
+    line-height: 35px;
+    color: #000000;
+    text-decoration: line-through;
+    float: left;
+}
+
+#item .right .price .money {
+    width: 140px;
+    color: rgb(100, 0, 0);
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+}
+
+#item .up .right .post_fee {
+    width: 670px;
+    height: 45px;
+    padding-left: 30px;
+    line-height: 45px;
+}
+
+#item .up .right .post_fee span {
+    width: 70px;
+    margin-right: 35px;
+    color: rgb(153, 153, 153);
+}
+
+#item .up .right .post_fee select {
+    height: 22px;
+}
+
+#item .up .right .numbers {
+    width: 670px;
+    height: 45px;
+    border-top: 1px dotted rgb(223, 213, 218);
+    border-bottom: 1px dotted rgb(223, 213, 218);
+}
+
+#item .up .right .numbers div {
+    width: 33%;
+    height: 20px;
+    margin-top: 11px;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(153, 153, 153);
+    float: left;
+}
+
+#item .up .right .numbers .border {
+    border-right: 1px solid rgb(223, 213, 218);
+}
+
+#item .up .right .numbers .red {
+    font-weight: bold;
+    color: rgb(255, 0, 54);
+}
+
+#item .up .right .size {
+    width: 670px;
+    height: 50px;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+#item .up .right .size .text {
+    width: 70px;
+    color: rgb(153, 153, 153);
+    line-height: 50px;
+    float: left;
+}
+
+#item .up .right .size .type {
+    line-height: 50px;
+}
+
+#item .up .right .size .sp {
+    height: 45px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid rgb(184, 183, 189);
+}
+
+#item .up .right .size .sp:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+#item .up .right .category {
+    width: 670px;
+    height: 50px;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+#item .up .right .category .text {
+    width: 70px;
+    color: rgb(153, 153, 153);
+    line-height: 50px;
+    float: left;
+}
+
+#item .up .right .category .type {
+    line-height: 50px;
+}
+
+#item .up .right .category .image {
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    border: 1px solid rgb(184, 183, 189);
+    float: left;
+}
+
+#item .up .right .category .image:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+#item .up .right .category img {
+    width: 45px;
+    height: 45px;
+}
+
+#item .up .right .amount {
+    width: 670px;
+    height: 50px;
+    margin-top: 23px;
+    padding-left: 30px;
+}
+
+#item .up .right .amount .text {
+    width: 70px;
+    color: rgb(153, 153, 153);
+    line-height: 50px;
+    float: left;
+}
+
+#item .up .right .number input {
+    width: 50px;
+    height: 40px;
+    margin-top: 6px;
+    padding-left: 20px;
+    border: 1px solid rgb(153, 153, 153);
+    float: left;
+}
+
+#item .up .right .number .arrow {
+    width: 25px;
+    height: 50px;
+    margin-top: 6px;
+    margin-left: 6px;
+    float: left;
+}
+
+#item .up .right .number .arrowup {
+    width: 25px;
+    height: 17px;
+    text-align: center;
+    background-image: url(../img/increase.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgb(153, 153, 153);
+    cursor: pointer;
+    float: left;
+}
+
+#item .up .right .number .arrowdown {
+    width: 25px;
+    height: 17px;
+    margin-top: 6px;
+    text-align: center;
+    background-image: url(../img/decrease.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgb(153, 153, 153);
+    cursor: pointer;
+    float: left;
+}
+
+#item .up .right .amount span {
+    width: 60px;
+    color: rgb(153, 153, 153);
+    line-height: 50px;
+}
+
+#item .up .right .service {
+    width: 670px;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 30px;
+    line-height: 50px;
+}
+
+#item .up .right .btn {
+    width: 670px;
+    height: 55px;
+    margin-top: 25px;
+}
+
+#item .up .right .btn button {
+    width: 230px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 75px;
+    color: #ffffff;
+    background-color: rgb(139, 126, 226);
+    border: 2px solid rgb(139, 126, 226);
+}
+
+#item .down {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#item .down .head {
+    width: 100%;
+    height: 60px;
+    line-height: 55px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border-bottom: 2px solid rgb(242, 242, 242);
+}
+#item .down .head .st{
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+}
+#item .down .head .text {
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 2px solid rgb(242, 242, 242);
+    border-left: 2px solid rgb(242, 242, 242);
+    border-right: 2px solid rgb(242, 242, 242);
+    cursor: pointer;
+    float: left;
+}
+
+#item .down .head .selected {
+    color: rgb(114, 100, 207);
+    border: 2px solid rgb(114, 100, 207);   
+}
+
+#item .down .details {
+    display: block;
+}
+
+#item .down .details img {
+    width: 100%;
+}
+#item .down .evaluates{
+    margin-top: 30px;
+    display: none;
+}
+#item .down .evaluates .eva {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgb(227, 227, 227);
+}
+
+#item .down .evaluates .eva .info {
+    width: 70%;
+    height: 50px;
+    padding-left: 80px;
+    line-height: 50px;
+    float: left;
+}
+
+#item .down .evaluates .eva .name {
+    width: 30%;
+    height: 100px;
+    padding-left: 100px;
+    line-height: 100px;
+    float: right;
+}
+
+#item .down .evaluates .eva .time {
+    width: 70%;
+    height: 50px;
+    padding-left: 80px;
+    line-height: 50px;
+    color: rgb(227, 227, 227);
+    float: left;    
+}

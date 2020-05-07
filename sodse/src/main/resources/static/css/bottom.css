@@ -1,0 +1,30 @@
+#bottom {
+    margin-top: 30px;
+    width: 100%;
+}
+
+#bottom .links {
+    width: 1070px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: rgb(108, 108, 108);
+}
+
+#bottom .links span {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#bottom .links a {
+    color: rgb(108, 108, 108);
+}
+
+#bottom .links a:hover {
+    color: red;
+}
+
+#bottom .copyright {
+    width: 300px;
+    margin: 25px auto;
+    font-size: 13px;
+}

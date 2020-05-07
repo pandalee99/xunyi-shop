@@ -1,0 +1,13 @@
+#foot {
+    width: 100%;
+    height: 130px;
+    background-color: white;
+}
+
+#foot .middle {
+    width: 1233px;
+    height: 90px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}

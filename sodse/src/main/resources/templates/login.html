@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css" />
+    <script src="/static/plugin/vue/vue.min.js"></script>
+</head>
+
+<body zoom="0.8">
+<!--<h1>登陆页面</h1>-->
+
+
+<!--<div th:if="${param.logout}">-->
+<!--    您已注销-->
+<!--</div>-->
+
+<!--<form th:action="@{/login}" action="" method="post">-->
+<!--    用户名:<input name="user"/><br>-->
+<!--    密码:<input name="password"><br/>-->
+<!--    <input type="checkbox" name="remember-me">记住我<br/>-->
+<!--    <input type="submit" value="登陆">-->
+<!--</form>-->
+
+<div id="main">
+    <div id="banner">
+        <!--        <a class="logo" href="#"><img src="./img/logo.png"></a>-->
+    </div>
+    <div id="middle">
+        <div id="login">
+            <div class="banner">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;用户登录</p>
+            </div>
+            <div>
+                <form class="info" th:action="@{/login}" action="#" method="POST">
+                    <div class="username">
+                        <span>账号：</span>
+                        <input id="account" type="text" name="user" placeholder="请输入账号">
+                    </div>
+                    <div class="password">
+                        <span>密码：</span>
+                        <input id="pwd" type="password" name="password" placeholder="请输入密码">
+                    </div>
+                    <div th:if="${param.error}">
+                        密码错误
+                    </div>
+                    <button class="submit" type="submit">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                </form>
+            </div>
+            <div class="foot">
+                <input type="checkbox" name="remember-me">记住我
+                <span><a th:href="@{/register}">免费注册</a></span>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="links">
+            <span><a href="#">关于我们</a></span>|
+            <span><a href="#">联系我们</a></span>|
+            <span><a href="#">人才招聘</a></span>|
+            <span><a href="#">商家入驻</a></span>|
+            <span><a href="#">广告服务</a></span>|
+            <span><a href="#">手机美美</a></span>|
+            <span><a href="#">友情链接</a></span>|
+            <span><a href="#">销售联盟</a></span>|
+            <span><a href="#">xx社区</a></span>|
+
+        </div>
+        <div class="copyright"><p>Copyright © 2004-2019 www.sodse.com 版权所有</p></div>
+    </div>
+</div>
+<script src="/static/js/login.js"></script>
+
+</body>
+</html>

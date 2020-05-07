@@ -1,0 +1,43 @@
+#top {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(242, 242, 242);
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+#top .middle {
+    width: 1200px;
+    height: 25px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: rgb(153, 153, 153);
+    line-height: 35px;
+}
+
+#top .middle img {
+    width: 15px;
+}
+
+#top .middle a {
+    color: rgb(153, 153, 153);
+}
+
+#top .middle a:hover {
+    color: rgb(250, 85, 12);
+}
+
+#top .middle .left {
+    float: left;
+}
+
+#top .middle .left a {
+    margin-left: 20px
+}
+
+#top .middle .right {
+    float: right;
+}
+
+#top .middle .right a {
+    margin-right: 15px;
+}

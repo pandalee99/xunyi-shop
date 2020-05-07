@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/top.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/selectbar.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/foot.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/success.css" />
+    <script src="/static/js/main.js"></script>
+</head>
+<body>
+<div id="main">
+
+    <div id="top">
+        <div class="middle">
+            <div class="left"  sec:authorize="!isAuthenticated()">
+                <img src="/static/img/home.png">
+                <span>欢迎来到XXXX</span>
+
+                <a th:href="@{/login}">请登录</a>
+                <a th:href="@{/register}">免费注册</a>
+            </div>
+            <div class="right" sec:authorize="isAuthenticated()">
+                <a th:href="@{/shop/my}">我的订单</a>
+                <img src="/static/img/shopcar.png">
+                <a th:href="@{/shop/my_shopping_cart}">我的购物车</a>
+            </div>
+        </div>
+    </div>
+    <div id="selectbar">
+        <!--        <a class="logo" href="#"><img src="/static/img/logo.png" alt=""></a>-->
+        <form id="inf" name="inf" action="#" th:action="@{/search}" method="POST">
+            <div class="search">
+                <input type="text" id="obj" name="obj" value="西服"  placeholder="男装 女装">
+                <button type="button" onclick="search()">搜索</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="success">
+        <div class="card">
+            <div class="up">
+                <img src="/static/img/paysuccess.png" alt=""><span>您已成功付款</span>
+            </div>
+            <div class="mid">
+                <div class="center">
+                    <ul>
+                        <li>· &nbsp;收货地址：<span class="addr" th:text="${session.address.getAddress()}">啊啊啊啊啊啊啊啊啊啊啊啊啊</span></li>
+                        <li>· &nbsp;收货人：<span class="addr" th:text="${session.address.getName()}">啊啊啊啊啊啊啊啊啊啊啊啊啊</span></li>
+                        <li>· &nbsp;电话号码：<span class="addr" th:text="${session.address.getPhone()}">啊啊啊啊啊啊啊啊啊啊啊啊啊</span></li>
+                        <li>· &nbsp;实付款：
+                            <span class="money" th:text="${pay}">3,358.80</span>
+                        </li>
+<!--                        预计送达时间：<li th:text="${date}" >· &nbsp;预计08月08日送达</li>-->
+                        <li>· &nbsp;预计送达时间：<span class="addr" th:text="${date}">2222</span></li>
+                    </ul>
+                    <div class="payedCheckLink">
+                        您可以&nbsp;&nbsp;
+                        <a th:href="@{/shop/my}">查看已买到的宝贝</a>&nbsp;&nbsp;
+                        <a th:href="@{/shop/my}">查看交易详情 </a>
+                    </div>
+                </div>
+            </div>
+            <div class="down">
+                <div class="warningDiv">
+                    <img src="/static/img/warning.png">
+                    <b>安全提醒：</b>下单后，<span class="red">用QQ给您发送链接办理退款的都是骗子！</span>商城不存在系统升级，订单异常等问题，谨防假冒客服电话诈骗！
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="foot">
+        <div class="middle">
+            <img src="/static/img/foot.jpg" alt="">
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="links">
+            <span><a href="#">关于我们</a></span>|
+            <span><a href="#">联系我们</a></span>|
+            <span><a href="#">人才招聘</a></span>|
+            <span><a href="#">商家入驻</a></span>|
+            <span><a href="#">广告服务</a></span>|
+            <span><a href="#">手机美美</a></span>|
+            <span><a href="#">友情链接</a></span>|
+            <span><a href="#">销售联盟</a></span>|
+            <span><a href="#">xx社区</a></span>|
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2004-2019 www.sodse.com 版权所有</p>
+        </div>
+    </div>
+</div>
+</body>
+</body>
+</html>
